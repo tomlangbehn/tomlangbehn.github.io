@@ -9,6 +9,11 @@
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
+  
+  			{% unless logo_path == empty %}
+				<a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="" height="20" /></a>
+			{% endunless %} 
+			
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         <button><div class="navicon"></div></button>
@@ -21,9 +26,7 @@
               {% assign domain = base_path %}
             {% endif %}
 			   
-			{% unless logo_path == empty %}
-				<a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="" height="20" /></a>
-			{% endunless %} 
+
 		
             <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
