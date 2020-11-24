@@ -15,8 +15,8 @@
   </div>
 
   <div class="author__content">
-    <h2 class="author__name">{{ author.name }}</h2>
-	{% if author.keywords %}<h4 class="author__bio">{{ author.keywords }}</h4>{% endif %}
+    <h1 class="author__name">{{ author.name }}</h1>
+	{% if author.keywords %}<h6 class="author__bio">{{ author.keywords }}</h6>{% endif %}
 	
     {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
   </div>
@@ -107,6 +107,9 @@
       {% endif %}
       {% if author.googlescholar %}
         <li><a href="{{ author.googlescholar }}"><i class="fas fa-fw fa-graduation-cap"></i> Google Scholar</a></li>
+      {% endif %}
+	  {% if author.publons %}
+        <li><a href="{{ author.publons }}"><i class="ai ai-impactstory ai-fw"></i> Publons</a></li>
       {% endif %}
       {% if author.pubmed %}
         <li><a href="{{ author.pubmed }}"><i class="ai ai-pubmed-square ai-fw"></i> PubMed</a></li>
