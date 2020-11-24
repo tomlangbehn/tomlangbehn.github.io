@@ -232,7 +232,7 @@
         left: 0;
         bottom: 0;
         height: 4px;
-        background: $success-color;
+        background: mix($success-color, $success-color, 50%);
         width: 100%;
         -webkit-transition: $global-transition;
         transition: $global-transition;
