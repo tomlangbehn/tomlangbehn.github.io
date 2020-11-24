@@ -13,9 +13,11 @@
                 <button><div class="navicon"></div></button>
                 <ul class="visible-links">
                     {% unless logo_path == empty %}
-                    <li class="masthead__menu-item masthead__menu-item--lg">
-                        <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="" height="20" /></a>
-                    </li>
+					<li class="masthead__menu-item masthead__menu-item--lg">
+						<a class="site-logo" href="{{ '/' | relative_url }}">
+							<img src="{{ logo_path | relative_url }}" alt="" height="20"/>
+						</a>
+					</li>
                     {% endunless %}
                     <!--<li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>-->
                     {% for link in site.data.navigation.main %} 
