@@ -14,6 +14,11 @@
               {% else %}
               {% assign domain = base_path %}
             {% endif %}
+			   
+			   {% unless logo_path == empty %}
+           <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="" height="20" /></a>
+        {% endunless %} 
+		
             <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
         </ul>
