@@ -15,7 +15,7 @@ url                      : https://tomlangbehn.github.io # the base hostname & p
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "tomlangbehn/tomlangbehn.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
-logo                     : "/images/mini-logo-square.png"    # path of logo image to display in the masthead, e.g. 
+logo                     : # "/images/mini-logo-square.png"    # path of logo image to display in the masthead, e.g. 
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
 future                   : true
