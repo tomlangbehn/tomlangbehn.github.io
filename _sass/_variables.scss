@@ -69,31 +69,31 @@ $highlight-color            : #ff9500;
 
 
 /* brands */
-$github-color               : $highlight-color;
+$github-color               : mix(#00, $highlight-color, 50%);
 $twitter-color              : $highlight-color;
 $researchgate-color         : $highlight-color;
 $google-scholar             : $highlight-color;
 $orcid-scholar              : $highlight-color;
 $publons-scholar            : $highlight-color;
 
-$behance-color              : #FFF;
-$dribbble-color             : #FFF;
-$facebook-color             : #FFF;
-$flickr-color               : #FFF;
-$foursquare-color           : #FFF;
-$google-plus-color          : #FFF;
-$instagram-color            : #FFF;
-$lastfm-color               : #FFF;
-$linkedin-color             : #FFF;
-$pinterest-color            : #FFF;
-$rss-color                  : #FFF;
-$soundcloud-color           : #FFF;
-$stackoverflow-color        : #FFF;
-$tumblr-color               : #FFF
-$vimeo-color                : #FFF;
-$vine-color                 : #FFF;
-$youtube-color              : #FFF;
-$xing-color                 : #FFF;
+$behance-color              : #fff;
+$dribbble-color             : #fff;
+$facebook-color             : #fff;
+$flickr-color               : #fff;
+$foursquare-color           : #fff;
+$google-plus-color          : #fff;
+$instagram-color            : #fff;
+$lastfm-color               : #fff;
+$linkedin-color             : #fff;
+$pinterest-color            : #fff;
+$rss-color                  : #fff;
+$soundcloud-color           : #fff;
+$stackoverflow-color        : #fff;
+$tumblr-color               : #fff,
+$vimeo-color                : #fff;
+$vine-color                 : #fff;
+$youtube-color              : #fff;
+$xing-color                 : #fff;
 
 
 
