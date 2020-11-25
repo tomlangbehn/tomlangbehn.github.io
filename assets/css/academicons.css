@@ -21,6 +21,7 @@
 	text-rendering:auto;
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
+	color: $highlight-color;
 }
 .ai-academia:before {
   content: "\e800";
