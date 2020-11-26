@@ -189,7 +189,7 @@ body:hover .visually-hidden button {
   .fa-github,
   .fa-github-alt,
   .fa-github-square {
-    color: #0004ff;
+    color: $github-color;;
   }
 
   .fa-rss,
@@ -207,14 +207,14 @@ body:hover .visually-hidden button {
     color: $twitter-color;
   }
 
-  
-  
-  
-  
-  
+  .ai-orcid,
+  .ai-orcid-square {
+	color: $academicons-color;
+  }
+
 }
-
-
+  
+  
 /*
    Navicons
    ========================================================================== */
