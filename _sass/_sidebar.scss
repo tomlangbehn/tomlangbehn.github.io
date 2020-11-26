@@ -239,6 +239,7 @@
 
     &:hover {
       text-decoration: underline;
+	  color: mix(#fff, $highlight-color, 50%);
     }
   }
 }
