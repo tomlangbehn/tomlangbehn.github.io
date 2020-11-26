@@ -447,7 +447,7 @@
 }
 
 /* Style the active class, and buttons on mouse-over */
-.active {
+.active, .btn:hover {
   background-color: yellow;
   color: red;
 }
