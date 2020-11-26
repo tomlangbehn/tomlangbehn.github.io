@@ -187,6 +187,11 @@
     &:hover {
       color: $masthead-link-color-hover;
     }
+	
+	&:active{
+	  color: red; 
+	}
+	  
   }
 
   button {
