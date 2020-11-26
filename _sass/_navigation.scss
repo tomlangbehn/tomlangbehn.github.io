@@ -200,6 +200,13 @@
     color: #fff;
     cursor: pointer;
   }
+  
+  .active {
+     color : $highlight-color;
+    &:hover {
+      color: mix(#fff, $highlight-color, 50%);
+    }
+  }
 
   .visible-links {
     display: table;
