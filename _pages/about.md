@@ -14,9 +14,9 @@ What I want to know
 ======
 
 
-<div id="myDIV">
-   <a href="https://tomlangbehn.github.io/teaching/" class="btn">TEST Button</a>
-</div>
+#<div id="myDIV">
+#   <a href="https://tomlangbehn.github.io/teaching/" class="btn">TEST Button</a>
+#</div>
 
 
 
