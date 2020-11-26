@@ -201,13 +201,6 @@
     cursor: pointer;
   }
   
-  .active {
-     color : $highlight-color;
-    &:hover {
-      color: mix(#fff, $highlight-color, 50%);
-    }
-  }
-
   .visible-links {
     display: table;
 
@@ -233,6 +226,9 @@
     a {
       position: relative;
 
+
+
+  
       &:before {
         content: "";
         position: absolute;
@@ -247,6 +243,10 @@
             -ms-transform: scaleX(0);
                 transform: scaleX(0); /* hide*/
       }
+	    &:active:before {
+     color : $highlight-color;
+  }
+  
 
       &:hover:before {
 	  	color: mix(#fff, $highlight-color, 50%);
