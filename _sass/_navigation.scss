@@ -437,18 +437,17 @@
 /* Active btn   ========================================================================== */
 
 /* Style the buttons */
-
 .btn {
   border: none;
   outline: none;
   padding: 10px 16px;
-  background-color: blue;
+  background-color: #f1f1f1;
   cursor: pointer;
   font-size: 18px;
 }
 
 /* Style the active class, and buttons on mouse-over */
-
 .active, .btn:hover {
-  color: red;
+  background-color: #666;
+  color: white;
 }

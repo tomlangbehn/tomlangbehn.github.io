@@ -18,9 +18,6 @@ What I want to know
   <button class="btn">1</button>
   <button class="btn active">2</button>
   <button class="btn">3</button>
-  <button class="btn">4</button>
-  <button class="btn">5</button>
-  <a  class="btn" href="https://tomlangbehn.github.io/publications/">Publications</a>
 </div>
 
 ======
