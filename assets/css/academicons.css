@@ -145,6 +145,7 @@
 }
 .ai-orcid:before {
   content: "\e840";
+  color: $academicons-color;
 }
 .ai-orcid-square:before {
   content: "\e841";
