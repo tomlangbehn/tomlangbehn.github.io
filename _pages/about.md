@@ -15,10 +15,7 @@ What I want to know
 
 
 <div id="myDIV">
-   <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_basic" class="btn">Link Button</a>
-  <button class="btn active"> Test 1</button>
-  <button class="btn">Test 2</button>
-  <button class="btn">Test 3</button>
+   <a href="https://tomlangbehn.github.io/teaching/" class="btn">TEST Button</a>
 </div>
 
 
