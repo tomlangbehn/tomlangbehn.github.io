@@ -442,13 +442,13 @@
   border: none;
   outline: none;
   padding: 10px 16px;
-  background-color: yellow;
+  background-color: blue;
   cursor: pointer;
   font-size: 18px;
 }
 
 /* Style the active class, and buttons on mouse-over */
 
-.btn:active{
-  color: $highlight-color;
+.active{
+  color: red;
 }
