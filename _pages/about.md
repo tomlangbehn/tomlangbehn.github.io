@@ -13,13 +13,6 @@ redirect_from:
 What I want to know
 ======
 
-
-#<div id="myDIV">
-#   <a href="https://tomlangbehn.github.io/teaching/" class="btn">TEST Button</a>
-#</div>
-
-
-
 **I want to understand the mechanics of life in the ocean**: how species interact, what drives their behaviour, evolutionary strategies, and distributions, and how marine ecosystems across different levels of organisation will respond to perturbations like climate change or fishing.
 
 What I do
