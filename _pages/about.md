@@ -15,9 +15,10 @@ What I want to know
 
 
 <div id="myDIV">
-  <button class="btn active">1</button>
-  <button class="btn">2</button>
-  <button class="btn">3</button>
+   <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_basic" class="btn">Link Button</a>
+  <button class="btn active"> Test 1</button>
+  <button class="btn">Test 2</button>
+  <button class="btn">Test 3</button>
 </div>
 
 
