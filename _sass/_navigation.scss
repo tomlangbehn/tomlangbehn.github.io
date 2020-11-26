@@ -240,7 +240,11 @@
             -ms-transform: scaleX(0);
                 transform: scaleX(0); /* hide*/
       }
- 
+	  
+	  &:active:before{
+	  color: red; 
+	  }
+	  
       &:hover:before {
 	  	color: mix(#fff, $highlight-color, 50%);
         -webkit-transform: scaleX(1);
@@ -249,6 +253,9 @@
       }
     }
   }
+
+
+
 
   .hidden-links {
     position: absolute;
