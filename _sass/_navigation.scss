@@ -232,7 +232,7 @@
         left: 0;
         bottom: 0;
         height: 4px;
-        background: mix($highlight-color, $highlight-color, 50%);
+        background: $highlight-color;
         width: 100%;
         -webkit-transition: $global-transition;
         transition: $global-transition;
@@ -242,6 +242,7 @@
       }
 
       &:hover:before {
+	  	color: mix(#fff, $highlight-color, 50%);
         -webkit-transform: scaleX(1);
             -ms-transform: scaleX(1);
                 transform: scaleX(1); /* reveal*/
