@@ -31,10 +31,13 @@
   }
 }
 
+.active {
+color: blue
+}
+
 .site-logo img {
   max-height: 20px;
 }
-
 
 .masthead__menu {
 
@@ -45,6 +48,9 @@
     list-style-type: none;
   }
 }
+
+
+
 
 .masthead__menu-item {
   display: block;
@@ -57,6 +63,10 @@
   }
 }
 
+
+
+
+
 .masthead__menu-item_right {
   display: block;
   list-style-type: none;
@@ -65,21 +75,7 @@
   
 
   &--lg {
-    padding-right: 2em;
-    font-weight: 700;
-  }
-}
-
-.masthead__menu-item_right_active:visited {
-  display: block;
-  list-style-type: none;
-  white-space: nowrap;
-  float: right;
-  color: #F6917A;
-  
-
-  &--lg {
-    padding-right: 2em;
+    padding-right: 4em;
     font-weight: 700;
   }
 }
