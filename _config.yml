@@ -86,8 +86,9 @@ author:
   keywords         : "ECOLOGY, EVOLUTION & GLOBAL CHANGE BIOLOGY"
   bio              : "I am a marine ecologist with a keen interested in evolution and the ecology and biogeography of environmental change with a particular fascination for polar ecosystems and the ocean twilight zones"
   location         : "Bergen, Norway"
+  location_link    : "https://www.google.com/maps/place/Bergen/@60.3648911,5.1489988,10z/data=!3m1!4b1!4m5!3m4!1s0x46390d4966767d77:0x9e42a03eb4de0a08!8m2!3d60.3912628!4d5.3220544"
   employer         : "University of Bergen"
-  employer_website : "http://bio.uib.no/te/new/news/index.php"
+  employer_link    : "http://bio.uib.no/te/new/news/index.php"
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=upYmy0oAAAAJ&hl=de"
   email            : "tom.langbehn@uib.no"
