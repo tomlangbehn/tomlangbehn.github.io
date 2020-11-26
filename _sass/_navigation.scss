@@ -186,12 +186,7 @@
 
     &:hover {
       color: $masthead-link-color-hover;
-    }
-	
-	&:active{
-	  color: red; 
-	}
-	  
+    }	  
   }
 
   button {
@@ -245,10 +240,6 @@
             -ms-transform: scaleX(0);
                 transform: scaleX(0); /* hide*/
       }
-	  
-	  &:active:before{
-	  color: red; 
-	  }
 	  
       &:hover:before {
 	  	color: mix(#fff, $highlight-color, 50%);
@@ -347,7 +338,6 @@
     margin-left: -0.5em;
     padding-left: 0.5em;
     padding-right: 0.5em;
-    color: red;
     font-weight: bold;
     background: $primary-color;
     border-radius: $border-radius;
@@ -442,4 +432,22 @@
       display: block;
     }
   }
+}
+
+/* Active btn   ========================================================================== */
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Style the active class, and buttons on mouse-over */
+.active, .btn:hover {
+  background-color: #666;
+  color: white;
 }
