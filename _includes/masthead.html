@@ -13,7 +13,7 @@
                 <button><div class="navicon"></div></button>
                 <ul class="visible-links">
                     {% unless logo_path == empty %}
-					<li class="masthead__menu-item masthead__menu-item--lg">
+					<li class="masthead__menu-item masthead__menu-item_left">
 						<a class="site-logo" href="{{ '/' | relative_url }}">
 							<img src="{{ logo_path | relative_url }}" alt="" height="20"/>
 						</a>
@@ -26,7 +26,9 @@
 						{% else %} 
 							{% assign domain = base_path %} 
 						{% endif %}
-                    <li class=".masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+                    <li class=".masthead__menu-item_right">
+						<a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+					</li>
                     {% endfor %}
                 </ul>
                 <ul class="hidden-links hidden"></ul>
