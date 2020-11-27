@@ -49,7 +49,7 @@
 
 }
 
-.masthead__menu_right {
+.masthead__menu{
 
   ul {
   float:right;
@@ -62,18 +62,6 @@
 
 }
 
-.masthead__menu_left {
-
-  ul {
-  float:left;
-    margin: 0;
-    padding: 0;
-    clear: both;
-    list-style-type: none;
-  }
-  
-
-}
 
 .masthead__menu-item {
   display: block;
