@@ -16,14 +16,15 @@
   <article>
 
    
-      {% if post.test %}
-	   <p> {{ post.test }} <i>{{post.venue}} </i></p> 
+      {% if post.collection == 'publications' %}
+	   <p> {{ post.author }} {{ post.year }} {{ post.title }} <i>{{post.journal}}</i> <b>{{post.volume}}</b> {{post.pages}} {{post.doi}}</p> 
+	  
 	   <span class="__dimensions_badge_embed__" data-doi= "{{post.doi}}" data-hide-zero-citations="true" data-style="large_rectangle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
 	   
-	   <div data-badge-popover="right" data-badge-type="1" data-doi="{{post.doi}}" data-hide-no-mentions="true" class="altmetric-embed"></div>
+	
 	   
 	   {% else %}
-	   <p> This doesnt contain post.test </p>
+	   <!--<p> This doesnt contain post.test </p>-->
       {% endif %}
  
 
