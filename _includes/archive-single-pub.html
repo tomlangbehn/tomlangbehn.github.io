@@ -15,11 +15,7 @@
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
    
-
-
-
-    
-	{% if post.type  == "ARTICLE" and post.collection == "publications" and post.year == "2017" %}
+	{% if post.type  == "ARTICLE" and post.collection == "publications" %}
     <h2> 2017 </h2>
     <p> {{post.author}} </p>
 	
