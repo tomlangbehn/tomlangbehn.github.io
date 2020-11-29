@@ -1,8 +1,8 @@
 ---
-type: 'ARTICLE'
+type: ARTICLE
 collection: publications
 author: Butler W, Guðmundsd{\'{o}}ttir L, Logemann K, Langbehn T & Marteinsd{\'{o}}ttir G
-year: '2020'
+year: 2020
 title: Egg size and density estimates for three gadoids in Icelandic waters and their implications for the vertical distribution of eggs along a stratified water column
 journal: Journal of Marine Systems
 volume: 204
