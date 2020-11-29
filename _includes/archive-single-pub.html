@@ -18,7 +18,10 @@
    
       {% if post.test %}
 	   <p> {{ post.test }} <i>{{post.venue}} </i></p> 
-	   <span class="__dimensions_badge_embed__" data-doi= "{{post.doi}}" data-style="large_rectangle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+	   <span class="__dimensions_badge_embed__" data-doi= "{{post.doi}}" data-hide-zero-citations="true" data-style="large_rectangle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+	   
+	   <div data-badge-popover="right" data-badge-type="1" data-doi="{{post.doi}}" data-hide-no-mentions="true" class="altmetric-embed"></div>
+	   
 	   {% else %}
 	   <p> This doesnt contain post.test </p>
       {% endif %}
