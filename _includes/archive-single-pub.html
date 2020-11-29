@@ -3,14 +3,11 @@
 <div class="{{ include.type | default: "list" }}__item">
   <article>
 
-{% if post.collection == 'publications' %}
 <p>{{ post.author }} {{ post.year }} <b>{{ post.title }}</b> <i>{{post.journal}}</i> <b>{{post.volume}}</b> {{post.pages}} {{post.doi}</p>
 
-{% if post.doi %}
 <span class="__dimensions_badge_embed__" data-doi="{{post.doi}}" data-hide-zero-citations="true" data-style="large_rectangle"></span>
 <script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
-{% endif %} 
-{% endif %}
+
  
 
 
