@@ -12,6 +12,8 @@
   {% assign title = post.title %}
 {% endif %}
 
+
+{% if post.year  == 2017 %}
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
    
@@ -24,3 +26,4 @@
 
   </article>
 </div>
+ {% endif %}
