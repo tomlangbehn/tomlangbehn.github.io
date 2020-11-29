@@ -15,13 +15,13 @@
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
 
-    <h2>
+    <p
       {% if post.test %}
-	 <p>{{ post.test }} </p>
+	 <p> {{ post.test }} {{post.venue}}</p>
 	   {% else %}
 	   <p> This doesnt contain post.test </p>
       {% endif %}
-    </h2>
+    </p>
 
 
   </article>
