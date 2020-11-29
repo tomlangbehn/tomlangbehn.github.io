@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Who I am"
+title: "Under construction"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -8,6 +8,9 @@ redirect_from:
   - /about.html
 ---
 
+
+Who I am
+======
 **I am quantitative (marine) ecologist with a strong interest in evolution and global change ecology. I enjoy thinking broadly, to link datawith theory and models, and I find interest in diverse biological disciplines**. Central aspects of my work are foraging interactions, physiology, life-history theory, species distributions, and behavioural ecology. I am particular fascinated by polar (high-latitude) ecosystems and their extreme seasonality, and life in the ocean twilight zone. I work mostly, but not exclusively, on (meso-)pelagic fish,zooplankton, and birds.
 
 What I want to know
