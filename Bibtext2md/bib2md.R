@@ -29,10 +29,10 @@ for (i in 1:nrow(bib)) {
     authorlist[j] <- paste(lastname, initital)
   }
   
-  typ <- paste0("type: ", "'", paste(bib$CATEGORY[[i]]),"'")
+  typ <- paste0("type: ",paste(bib$CATEGORY[[i]]))
   col <- paste0("collection: ", "publications")
   au <- paste0("author: ", paste0(paste(authorlist[-no_au], collapse = ", ")), " & ", last(authorlist))
-  yr <- paste0("year: '", paste(bib$YEAR[[i]]), "'")
+  yr <- paste0("year: ", paste(bib$YEAR[[i]]))
   tit <- paste0("title: ", paste(bib$TITLE[[i]]))
   jou <- paste0("journal: ", paste(bib$JOURNAL[[i]]))
   vol <- paste0("volume: ", paste(bib$VOLUME[[i]]))

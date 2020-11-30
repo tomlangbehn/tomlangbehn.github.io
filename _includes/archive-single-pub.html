@@ -17,7 +17,7 @@
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
    
 	{% if post.type  == "ARTICLE" and post.collection == "publications" %}
-    <p> {{post.author}}, ({{post.year}}): <b> {{post.title}} </b></p>
+    <p> {{post.author}}, ({{post.year}})<br> <b> {{post.title}} </b> <i>{{post.journal}}</i> </p>
 	
     {% endif %}
 
