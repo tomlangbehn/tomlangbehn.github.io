@@ -13,16 +13,41 @@
 {% endif %}
 
 
-<div class="{{ include.type | default: "list" }}__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-   
-	{% if post.collection == "publications" %}
+      <script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+      <script async="" src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+      
+	  <div class="page-content">
+      <div class="wrapper">
+      <div class="post">
+      <header class="post-header">
+         <h1 class="post-title">Publications</h1>
+      </header>
+      
+	  <article class="post-content Publications">
+      
+	  <h3 class="year">2020</h3>
+      
+	  <div id="geartyphysiological">
+         <table>
+            <tr>
+               <td>
+                  <span class="title"><strong>Physiological constraints on body size distributions in crocodyliformes</strong></span>
+                  <span class="author">
+                  <em><strong>Gearty, William</strong></em>, and <a href="https://paleobiology.stanford.edu/" target="_blank">Payne, Jonathan L</a>
+                  </span>
+                  <span class="periodical">
+                     <em>Evolution</em>, 74(2), 245–255
+                  </span>
+                  <span class="links">
+                  [<a class="abstract">Abs</a>] [<a href="https://onlinelibrary.wiley.com/doi/10.1111/evo.13901" target="_blank">HTML</a>] [
+                  <a href="/assets/pdf/Gearty and Payne 2020 Evolution.pdf" target="_blank">PDF</a>] [<a href="https://purl.stanford.edu/fd595ms6824" target="_blank">Code</a>]
+                  </span>
+               </td>
+               <td class="altmetric">
+                  <div data-badge-popover="left" data-badge-type="donut" data-doi="10.1111/evo.13901" data-hide-no-mentions="true" data-hide-less-than="20" class="altmetric-embed"></div>
+                  <span class="__dimensions_badge_embed__" data-doi="10.1111/evo.13901" data-hide-zero-citations="true" data-style="small_rectangle"></span>
+               </td>
+            </tr>
+         </table>
+      </div>
 
-	<p>{{post.author}}, ({{post.year}})<br> <b> {{post.title}} </b> <br> <i>{{post.journal}}</i> <b> {{post.volume}}</b>:  {{post.pages}}
-	    DOI: <a href="http://dx.doi.org/{{entry.doi}}">{{entry.doi}}</a></p>
-
-    {% endif %}
-
-
-  </article>
-</div>

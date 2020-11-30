@@ -1,0 +1,28 @@
+{% include base_path %}
+
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+
+<div class="{{ include.type | default: "list" }}__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+   
+	{% if post.collection == "publications" %}
+
+	<p>{{post.author}}, ({{post.year}})<br> <b> {{post.title}} </b> <br> <i>{{post.journal}}</i> <b> {{post.volume}}</b>:  {{post.pages}}
+	    DOI: <a href="http://dx.doi.org/{{entry.doi}}">{{entry.doi}}</a></p>
+
+    {% endif %}
+
+
+  </article>
+</div>
