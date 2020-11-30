@@ -17,11 +17,9 @@
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
    
 	{% if post.collection == "publications" %}
-    <div> 
+
 	<p>{{post.author}}, ({{post.year}})<br> <b> {{post.title}} </b> <br> <i>{{post.journal}}</i> <b> {{post.volume}}</b>:  {{post.pages}}
-	    DOI: <a href="http://dx.doi.org/{{entry.doi}}">{{entry.doi}}</a></p>
-	</div>
-    {% endif %}
+
 
 
   </article>
