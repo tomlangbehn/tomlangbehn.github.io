@@ -8,6 +8,6 @@ journal: Journal of Marine Systems
 volume: 204
 pages: 103290
 doi: 10.1016/j.jmarsys.2019.103290
-url: https://doi.org/10.1016/j.jmarsys.2019.103290 https://linkinghub.elsevier.com/retrieve/pii/S0924796319304270
+url: https://linkinghub.elsevier.com/retrieve/pii/S0924796319304270
 ---
 NA
