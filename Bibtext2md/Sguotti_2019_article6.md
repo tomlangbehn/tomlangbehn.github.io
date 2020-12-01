@@ -6,13 +6,7 @@ year: 2019
 title: Catastrophic dynamics limit Atlantic cod recovery
 journal: Proceedings of the Royal Society B: Biological Sciences
 volume: 286
-pages: 193-195
-pages: 5318-5330
-pages: 2615-2619
-pages: 803-812
-pages: 161-174
 pages: 20182877
-pages: 103290
 doi: 10.1098/rspb.2018.2877
 url: https://royalsocietypublishing.org/doi/10.1098/rspb.2018.2877
 ---
