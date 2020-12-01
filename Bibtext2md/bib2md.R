@@ -4,6 +4,10 @@ library(bib2df)
 #!> read bib text files
 bib <- bib2df::bib2df("my_pubs.bib") %>% arrange(YEAR,AUTHOR)
 
+pdf_filenames <- here::here("files","papers") %>% list.files(".pdf")
+
+
+
 
 yamllist <- list()
 yamllist2 <- list()
@@ -40,8 +44,19 @@ for (i in 1:nrow(bib)) {
   doi <- paste0("doi: ", paste(bib$DOI[[i]]))
   url <- paste0("url: ", bib$URL[[i]] %>% str_split(" ") %>% unlist %>% last())
   name <- paste0("article", i, sep = "")
+  head_title <- paste(bib$TITLE[[i]]) %>% str_trim() %>% word(., 1,6)
+  
+  if(isTRUE(pdf_filenames %>%  str_detect(., head_title, negate = FALSE))){
+    pdf <- pdf_filenames[pdf_filenames %>%  str_detect(., head_title, negate = FALSE)]
+  } else {
+    
+    pdf <- NULL  
+  }
 
-  tmp <- list(typ = typ, col=col, au = au, yr = yr, tit = tit, jou = jou, vol = vol, pge = pge, doi = doi, url = url)
+  
+  
+  tmp <- list(typ = typ, col=col, au = au, yr = yr, tit = tit, jou = jou, vol = vol, pge = pge, doi = doi, url = url, pdf=pdf)
+
   yamllist[[name]] <- tmp
   
 
