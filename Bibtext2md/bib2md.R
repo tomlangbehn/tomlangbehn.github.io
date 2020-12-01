@@ -15,6 +15,7 @@ yamllist2 <- list()
 for (i in 1:nrow(bib)) {
   no_au <- length(bib$AUTHOR[[i]])
   
+  #!> reformat author names to just include lastname followed by initials
   authorlist <- bib$AUTHOR[[i]]
   for (j in 1:no_au) {
     lastname <- bib$AUTHOR[[i]][j] %>%
@@ -46,16 +47,13 @@ for (i in 1:nrow(bib)) {
   name <- paste0("article", i, sep = "")
   head_title <- paste(bib$TITLE[[i]]) %>% str_trim() %>% word(., 1,6)
   
-  if(isTRUE(pdf_filenames %>%  str_detect(., head_title, negate = FALSE))){
-    pdf <- pdf_filenames[pdf_filenames %>%  str_detect(., head_title, negate = FALSE)]
+  if(pdf_filenames %>% str_detect(., head_title, negate = FALSE) %>% any %>% isTRUE){
+     pdf_file <- paste0("filename: ", pdf_filenames[pdf_filenames %>%  str_detect(., head_title, negate = FALSE)])
   } else {
-    
-    pdf <- NULL  
+    pdf_file <- paste0("filename:")
   }
-
   
-  
-  tmp <- list(typ = typ, col=col, au = au, yr = yr, tit = tit, jou = jou, vol = vol, pge = pge, doi = doi, url = url, pdf=pdf)
+  tmp <- list(typ = typ, col=col, au = au, yr = yr, tit = tit, jou = jou, vol = vol, pge = pge, doi = doi, url = url, pdf_file=pdf_file)
 
   yamllist[[name]] <- tmp
   
