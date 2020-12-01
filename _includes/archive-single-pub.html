@@ -26,6 +26,27 @@
       <div class="post">
       
 	  <article class="post-content Publications">
-          
+           
+	  <div id="geartyphysiological">
+         <table>
+            <tr>
+               <td>
+				  <span class="author"> {{ post.author }} ({{ post.year }}). </span>
+                  <span class="title"><strong> {{post.title}}</strong>,</span>
+                  <span class="periodical"><i>{{post.journal}}</i>. {{post.volume}}:{{post.pages}}, </span>
+                  <span class="links">
+				  <span class="doi"> doi: {{ post.doi }} </span>
+                  [<a href="{{ post.url }}" target="_blank">HTML</a>] [
+                  <a href="/assets/pdf/Gearty and Payne 2020 Evolution.pdf" target="_blank">PDF</a>]
+                  </span>
+               </td>
+               <td class="altmetric">
+					<span class="__dimensions_badge_embed__" data-doi= "{{ post.doi }}" data-style="large_rectangle"></span>
+					<div data-badge-popover="right" data-badge-type="1" data-doi="{{ post.doi }}" data-hide-no-mentions="true" class="altmetric-embed"></div>
+               </td>
+            </tr>
+         </table>
+      </div>
+
   </article>
 </div>
