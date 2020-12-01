@@ -36,8 +36,10 @@
                   <span class="periodical"><i>{{post.journal}}</i>. {{post.volume}}:{{post.pages}}, </span>
                   <span class="links">
 				  <span class="doi"> doi:{{ post.doi }} </span>
-                  [<a href="{{ post.url }}" target="_blank">HTML</a>] [
-                  <a href="/assets/pdf/Gearty and Payne 2020 Evolution.pdf" target="_blank">PDF</a>]
+                  [<a href="{{ post.url }}" target="_blank">HTML</a>] 
+				  {% if post.id %}
+				  [<a href="/files/papers/{{post.filename}}" target="_blank">PDF</a>]
+				  {% endif %}
                   </span>
                </td>
                <td class="altmetric">
