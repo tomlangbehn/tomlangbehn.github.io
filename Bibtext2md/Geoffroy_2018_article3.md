@@ -6,7 +6,13 @@ year: 2018
 title: Increased occurrence of the jellyfish Periphylla periphylla in the European high Arctic
 journal: Polar Biology
 volume: 41
-pages: 2615--2619
+pages: 193-195
+pages: 5318-5330
+pages: 2615-2619
+pages: 803-812
+pages: 161-174
+pages: 20182877
+pages: 103290
 doi: 10.1007/s00300-018-2368-4
 url: http://link.springer.com/10.1007/s00300-018-2368-4
 ---

@@ -6,7 +6,13 @@ year: 2019
 title: Light comfort zone in a mesopelagic fish emerges from adaptive behaviour along a latitudinal gradient
 journal: Marine Ecology Progress Series
 volume: 623
-pages: 161--174
+pages: 193-195
+pages: 5318-5330
+pages: 2615-2619
+pages: 803-812
+pages: 161-174
+pages: 20182877
+pages: 103290
 doi: 10.3354/meps13024
 url: https://www.int-res.com/abstracts/meps/v623/p161-174/
 ---
