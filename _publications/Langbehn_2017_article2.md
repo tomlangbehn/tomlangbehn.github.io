@@ -3,7 +3,7 @@ type: ARTICLE
 collection: publications
 author: Geoffroy M, Berge J, Majaneva S, Johnsen G, Langbehn TJ, Cottier F, Mogstad AA, Zolich A & Last K
 year: 2018
-title: Sea-ice loss boosts visual search: fish foraging and changing pelagic interactions in polar oceans
+title: Increased occurrence of the jellyfish Periphylla periphylla in the European high Arctic
 journal: Global Change Biology
 volume: 23
 pages: 5318-5330
