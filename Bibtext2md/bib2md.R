@@ -39,7 +39,7 @@ for (i in 1:nrow(bib)) {
   au <- paste0("author: ", paste0(paste(authorlist[-no_au], collapse = ", ")), " & ", last(authorlist))
   yr <- paste0("year: ", paste(bib$YEAR[[i]]))
   tit <- paste0("title: ", paste0("'", bib$TITLE[[i]], "'")) 
-  jou <- paste0("journal: ", paste(bib$JOURNAL[[i]]))
+  jou <- paste0("journal: ", paste0("'", bib$JOURNAL[[i]], "'")) 
   vol <- paste0("volume: ", paste(bib$VOLUME[[i]]))
   pge <- paste0("pages: ", bib$PAGES[[i]] %>% str_replace(., "--", "-"))
   doi <- paste0("doi: ", paste(bib$DOI[[i]]))
@@ -69,8 +69,7 @@ for (i in 1:length(yamllist)) {
   fileConn<-file(yamllist2[[i]]$filename)
   writeLines(c("---",
                paste0(unlist(yamllist[i])),
-               "---",
-               paste0(yamllist2[[i]]$abst)), 
+               "---"), 
              fileConn)
   close(fileConn)
 }
