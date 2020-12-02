@@ -38,7 +38,7 @@ for (i in 1:nrow(bib)) {
   col <- paste0("collection: ", "publications")
   au <- paste0("author: ", paste0(paste(authorlist[-no_au], collapse = ", ")), " & ", last(authorlist))
   yr <- paste0("year: ", paste(bib$YEAR[[i]]))
-  tit <- paste0("title: ", paste(bib$TITLE[[i]])) %>% str_trim()
+  tit <- paste0("title: ", paste0("'", bib$TITLE[[i]], "'")) 
   jou <- paste0("journal: ", paste(bib$JOURNAL[[i]]))
   vol <- paste0("volume: ", paste(bib$VOLUME[[i]]))
   pge <- paste0("pages: ", bib$PAGES[[i]] %>% str_replace(., "--", "-"))
