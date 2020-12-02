@@ -1,9 +1,9 @@
 ---
 type: ARTICLE
 collection: publications
-author: Geoffroy M, Berge J, Majaneva S, Johnsen G, Langbehn TJ, Cottier F, Mogstad AA, Zolich A & Last K
-year: 2018
-title: Increased occurrence of the jellyfish Periphylla periphylla in the European high Arctic
+author: Langbehn TJ & Varpe 
+year: 2017
+title: 'Sea-ice loss boosts visual search: fish foraging and changing pelagic interactions in polar oceans'
 journal: Global Change Biology
 volume: 23
 pages: 5318-5330
