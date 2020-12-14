@@ -9,7 +9,8 @@ tex2txt <- function(x) {
     str_replace_all(., "\\{\\\\'\\{o\\}\\}", "ó") %>% 
     str_replace_all(., "\\{\\\\'\\{O\\}\\}", "Ó") %>% 
     str_replace_all(., "\\{\\\\\\\"\\{o\\}\\}", "ö") %>% 
-    str_replace_all(., "\\{\\\\\\\"\\{e\\}\\}", "ë") 
+    str_replace_all(., "\\{\\\\\\\"\\{e\\}\\}", "ë") %>% 
+    str_replace_all(., "\\{\\\\\\\"\\{u\\}\\}", "ü") 
 }
 
 
@@ -48,9 +49,9 @@ for (i in 1:nrow(bib)) {
   
   typ <- paste0("type: ",paste(bib$CATEGORY[[i]]))
   col <- paste0("collection: ", "publications")
-  au <- paste0("author: ", paste0(paste(authorlist[-no_au], collapse = ", ")), " & ", last(authorlist))
+  au <- paste0("author: ", paste0(paste(authorlist[-no_au], collapse = ", ")), " & ", last(authorlist)) %>% tex2txt(.)
   yr <- paste0("year: ", paste(bib$YEAR[[i]]))
-  tit <- paste0("title: ", paste0("'", tex2txt(bib$TITLE[[i]]), "'")) 
+  tit <- paste0("title: ", paste0("'", bib$TITLE[[i]], "'")) %>% tex2txt(.)
   jou <- paste0("journal: ", paste0("'", bib$JOURNAL[[i]], "'")) 
   vol <- paste0("volume: ", paste(bib$VOLUME[[i]]))
   pge <- paste0("pages: ", bib$PAGES[[i]] %>% str_replace(., "--", "-"))
