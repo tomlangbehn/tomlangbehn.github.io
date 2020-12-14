@@ -1,6 +1,18 @@
 library(tidyverse)
 library(bib2df)
 
+
+tex2txt <- function(x) {
+  x <- x %>%  
+    str_replace_all(., "\\{\\\\o\\}", "ø") %>% 
+    str_replace_all(., "\\{\\\\O\\}", "Ø") %>% 
+    str_replace_all(., "\\{\\\\'\\{o\\}\\}", "ó") %>% 
+    str_replace_all(., "\\{\\\\'\\{O\\}\\}", "Ó") %>% 
+    str_replace_all(., "\\{\\\\\\\"\\{o\\}\\}", "ö") %>% 
+    str_replace_all(., "\\{\\\\\\\"\\{e\\}\\}", "ë") 
+}
+
+
 #!> read bib text files
 bib <- bib2df::bib2df("my_pubs.bib") %>% arrange(YEAR,AUTHOR)
 
@@ -16,7 +28,7 @@ for (i in 1:nrow(bib)) {
   no_au <- length(bib$AUTHOR[[i]])
   
   #!> reformat author names to just include lastname followed by initials
-  authorlist <- bib$AUTHOR[[i]]
+  authorlist <- bib$AUTHOR[[i]] %>% tex2txt(.)
   for (j in 1:no_au) {
     lastname <- bib$AUTHOR[[i]][j] %>%
       str_remove(., "[,]") %>%
@@ -38,7 +50,7 @@ for (i in 1:nrow(bib)) {
   col <- paste0("collection: ", "publications")
   au <- paste0("author: ", paste0(paste(authorlist[-no_au], collapse = ", ")), " & ", last(authorlist))
   yr <- paste0("year: ", paste(bib$YEAR[[i]]))
-  tit <- paste0("title: ", paste0("'", bib$TITLE[[i]], "'")) 
+  tit <- paste0("title: ", paste0("'", tex2txt(bib$TITLE[[i]]), "'")) 
   jou <- paste0("journal: ", paste0("'", bib$JOURNAL[[i]], "'")) 
   vol <- paste0("volume: ", paste(bib$VOLUME[[i]]))
   pge <- paste0("pages: ", bib$PAGES[[i]] %>% str_replace(., "--", "-"))
@@ -58,7 +70,7 @@ for (i in 1:nrow(bib)) {
   yamllist[[name]] <- tmp
   
 
-  filename <- paste0(word(authorlist[1]), "_", bib$YEAR[[i]], "_", name, ".md")
+  filename <- paste0(name, "_",word(authorlist[1]), "_", bib$YEAR[[i]],".md")
   abst <- paste0(bib$ABSTRACT[[i]])
   tmp2 <- list(abst = abst, filename=filename)
   yamllist2[[name]] <- tmp2
@@ -77,9 +89,9 @@ for (i in 1:length(yamllist)) {
 
 
 
-# for (i in 1:length(yamllist)) {
-#   cat(paste0("---", sep = "\n"),
-#       paste0(unlist(yamllist[i]), sep = "\n"), 
-#       paste0("---", sep = "\n"), 
-#       paste0("\n", yamllist2[[i]]$abst, sep = "\n"), file = yamllist2[[i]]$filename)
-# }
+for (i in 1:length(yamllist)) {
+  cat(paste0("---", sep = "\n"),
+      paste0(unlist(yamllist[i]), sep = "\n"),
+      paste0("---", sep = "\n"),
+      paste0("\n", yamllist2[[i]]$abst, sep = "\n"), file = yamllist2[[i]]$filename)
+}
