@@ -1,6 +1,9 @@
 library(tidyverse)
 library(bib2df)
 
+
+
+
 #!> read bib text files
 bib <- bib2df::bib2df("my_pubs.bib") %>% arrange(YEAR,AUTHOR)
 
@@ -9,9 +12,10 @@ pdf_filenames <- here::here("files","papers") %>% list.files(".pdf")
 
 tex2txt <- function(x) {
   x <- x %>%  
+    str_replace_all(., "\\{\\\\'\\{o\\}\\}", "o")
     # str_replace_all(., "\\{\\\\o\\}", "ø") %>% 
     # str_replace_all(., "\\{\\\\O\\}", "Ø") %>% 
-    str_replace_all(., "\\{\\\\'\\{o\\}\\}", "ó")
+    # str_replace_all(., "\\{\\\\'\\{o\\}\\}", "ó") %>% 
     # str_replace_all(., "\\{\\\\'\\{O\\}\\}", "Ó") %>% 
     # str_replace_all(., "\\{\\\\\\\"\\{o\\}\\}", "ö") %>% 
     # str_replace_all(., "\\{\\\\\\\"\\{e\\}\\}", "ë") %>% 
