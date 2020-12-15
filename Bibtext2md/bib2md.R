@@ -20,10 +20,12 @@ tex2txt <- function(x) {
     str_replace_all(., "\\{\\\\\\\"\\{O\\}\\}", "&Ouml;") %>%
     str_replace_all(., "\\{\\\\\\\"\\{e\\}\\}", "&euml;") %>%
     str_replace_all(., "\\{\\\\\\\"\\{u\\}\\}", "&uuml;") %>%
-    str_replace_all(., "\\{\\\\\\\"\\{U\\}\\}", "	&apos;") %>% 
+    str_replace_all(., "\\{\\\\\\\"\\{U\\}\\}", "&Uuml;") %>% 
     str_replace_all(., "'", "	&apos;")
 }
 
+
+# bib$TITLE[[1]] %>%    str_replace_all(., "\\{\\\\\\\"\\{u\\}\\}", "&uuml;") 
 
 spec2italics <- function(x) {
   x <- x %>%
