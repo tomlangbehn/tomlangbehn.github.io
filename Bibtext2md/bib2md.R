@@ -7,7 +7,16 @@ bib <- bib2df::bib2df("my_pubs.bib") %>% arrange(YEAR,AUTHOR)
 pdf_filenames <- here::here("files","papers") %>% list.files(".pdf")
 
 
-
+tex2txt <- function(x) {
+  x <- x %>%  
+    # str_replace_all(., "\\{\\\\o\\}", "ø") %>% 
+    # str_replace_all(., "\\{\\\\O\\}", "Ø") %>% 
+    str_replace_all(., "\\{\\\\'\\{o\\}\\}", "ó")
+    # str_replace_all(., "\\{\\\\'\\{O\\}\\}", "Ó") %>% 
+    # str_replace_all(., "\\{\\\\\\\"\\{o\\}\\}", "ö") %>% 
+    # str_replace_all(., "\\{\\\\\\\"\\{e\\}\\}", "ë") %>% 
+    # str_replace_all(., "\\{\\\\\\\"\\{u\\}\\}", "ü") 
+}
 
 yamllist <- list()
 yamllist2 <- list()
@@ -36,7 +45,7 @@ for (i in 1:nrow(bib)) {
   
   typ <- paste0("type: ",paste(bib$CATEGORY[[i]]))
   col <- paste0("collection: ", "publications")
-  au <- paste0("author: ", paste0(paste(authorlist[-no_au], collapse = ", ")), " & ", last(authorlist))
+  au <- paste0("author: ", paste0(paste(authorlist[-no_au], collapse = ", ")), " & ", last(authorlist)) %>% tex2txt
   yr <- paste0("year: ", paste(bib$YEAR[[i]]))
   tit <- paste0("title: ", paste0("'", bib$TITLE[[i]], "'")) 
   jou <- paste0("journal: ", paste0("'", bib$JOURNAL[[i]], "'")) 
