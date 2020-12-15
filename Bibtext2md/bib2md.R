@@ -23,6 +23,15 @@ tex2txt <- function(x) {
     str_replace_all(., "\\{\\\\\\\"\\{U\\}\\}", "&Uuml;")
 }
 
+
+spec2italics <- function(x) {
+  x <- x %>%  
+    str_replace_all(., "Clupea harengus", "<i>Clupea harengus</i>") %>%
+    str_replace_all(., "Hydrellia tarsata", "<i>Hydrellia tarsata</i>") %>%
+    str_replace_all(., "Periphylla periphylla", "<i>Periphylla periphylla</i>") 
+}
+
+
 yamllist <- list()
 yamllist2 <- list()
 
@@ -50,9 +59,9 @@ for (i in 1:nrow(bib)) {
   
   typ <- paste0("type: ",paste(bib$CATEGORY[[i]]))
   col <- paste0("collection: ", "publications")
-  au <- paste0("author: ", paste0(paste(authorlist[-no_au], collapse = ", ")), " & ", last(authorlist)) %>% tex2txt
+  au <- paste0("author: ", paste0(paste(authorlist[-no_au], collapse = ", ")), " & ", last(authorlist)) %>% tex2txt()
   yr <- paste0("year: ", paste(bib$YEAR[[i]]))
-  tit <- paste0("title: ", paste0("'", bib$TITLE[[i]], "'")) 
+  tit <- paste0("title: ", paste0("'", bib$TITLE[[i]], "'")) %>% spec2italics()
   jou <- paste0("journal: ", paste0("'", bib$JOURNAL[[i]], "'")) 
   vol <- paste0("volume: ", paste(bib$VOLUME[[i]]))
   pge <- paste0("pages: ", bib$PAGES[[i]] %>% str_replace(., "--", "-"))
