@@ -12,14 +12,15 @@ pdf_filenames <- here::here("files","papers") %>% list.files(".pdf")
 
 tex2txt <- function(x) {
   x <- x %>%  
-    str_replace_all(., "\\{\\\\'\\{o\\}\\}", "&oslash")
-    # str_replace_all(., "\\{\\\\o\\}", "ø") %>% 
-    # str_replace_all(., "\\{\\\\O\\}", "Ø") %>% 
-    # str_replace_all(., "\\{\\\\'\\{o\\}\\}", "ó") %>% 
-    # str_replace_all(., "\\{\\\\'\\{O\\}\\}", "Ó") %>% 
-    # str_replace_all(., "\\{\\\\\\\"\\{o\\}\\}", "ö") %>% 
-    # str_replace_all(., "\\{\\\\\\\"\\{e\\}\\}", "ë") %>% 
-    # str_replace_all(., "\\{\\\\\\\"\\{u\\}\\}", "ü") 
+    str_replace_all(., "\\{\\\\o\\}", "&oslash;") %>%
+    str_replace_all(., "\\{\\\\O\\}", "&Oslash;") %>%
+    str_replace_all(., "\\{\\\\'\\{o\\}\\}", "&oacute;") %>%
+    str_replace_all(., "\\{\\\\'\\{O\\}\\}", "&Oacute;") %>%
+    str_replace_all(., "\\{\\\\\\\"\\{o\\}\\}", "&ouml;") %>%
+    str_replace_all(., "\\{\\\\\\\"\\{O\\}\\}", "&Ouml;") %>%
+    str_replace_all(., "\\{\\\\\\\"\\{e\\}\\}", "&euml;") %>%
+    str_replace_all(., "\\{\\\\\\\"\\{u\\}\\}", "&uuml;") %>% 
+    str_replace_all(., "\\{\\\\\\\"\\{U\\}\\}", "&Uuml;")
 }
 
 yamllist <- list()
