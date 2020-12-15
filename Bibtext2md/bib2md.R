@@ -58,7 +58,7 @@ for (i in 1:nrow(bib)) {
   yamllist[[name]] <- tmp
   
 
-  filename <- paste0(word(authorlist[1]), "_", bib$YEAR[[i]], "_", name, ".md")
+  filename <- paste0(name, "_", word(authorlist[1]), "_", bib$YEAR[[i]], ".md")
   abst <- paste0(bib$ABSTRACT[[i]])
   tmp2 <- list(abst = abst, filename=filename)
   yamllist2[[name]] <- tmp2
