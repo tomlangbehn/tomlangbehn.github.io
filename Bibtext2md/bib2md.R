@@ -6,8 +6,9 @@ library(bib2df)
 
 # !> read bib text files
 bib <- bib2df::bib2df("my_pubs.bib") %>% arrange(YEAR, AUTHOR)
-
 pdf_filenames <- here::here("files", "papers") %>% list.files(".pdf")
+
+
 
 
 tex2txt <- function(x) {
@@ -24,7 +25,7 @@ tex2txt <- function(x) {
     str_replace_all(., "'", "&apos;")
 }
 
-bib$TITLE[[4]] %>%    str_replace_all(., "\\{\\\\\\\"\\{u\\}\\}", "&uuml;")
+# bib$TITLE[[4]] %>%    str_replace_all(., "\\{\\\\\\\"\\{u\\}\\}", "&uuml;")
 
 spec2italics <- function(x) {
   x <- x %>%
@@ -71,16 +72,17 @@ for (i in 1:nrow(bib)) {
   doi <- paste0("doi: ", paste(bib$DOI[[i]]))
   url <- paste0("url: ", bib$URL[[i]] %>% str_split(" ") %>% unlist() %>% last())
   name <- paste0("article", i, sep = "")
-  head_title <- paste(bib$TITLE[[i]]) %>%
-    str_trim() %>%
-    word(., 1, 6)
 
-  if (pdf_filenames %>% str_detect(., head_title, negate = FALSE) %>% any() %>% isTRUE()) {
-    pdf_file <- paste0("filename: ", pdf_filenames[pdf_filenames %>% str_detect(., head_title, negate = FALSE)])
+  
+  pdf <- pdf_filenames %>% .[str_starts(., word(authorlist)[1])] %>% .[str_which(.,as.character(bib$YEAR[[i]]))] %>% .[str_which(., word(bib$TITLE[[i]],1,3))]
+
+  if (isFALSE(identical(pdf, character(0)))) {
+    pdf_file <- paste0("filename: ", paste0("'", pdf, "'"))
   } else {
     pdf_file <- paste0("filename:")
   }
 
+  
   tmp <- list(typ = typ, col = col, au = au, yr = yr, tit = tit, jou = jou, vol = vol, pge = pge, doi = doi, url = url, pdf_file = pdf_file)
 
   yamllist[[name]] <- tmp
