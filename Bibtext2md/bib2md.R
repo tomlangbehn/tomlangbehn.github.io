@@ -76,11 +76,11 @@ for (i in 1:nrow(bib)) {
   
   pdf <- pdf_filenames %>% .[str_starts(., word(authorlist)[1])] %>% .[str_which(.,as.character(bib$YEAR[[i]]))] %>% .[str_which(., word(bib$TITLE[[i]],1,3))]
 
-  if (isFALSE(identical(pdf, character(0)))) {
-    pdf_file <- paste0("filename: ", paste0("'", pdf, "'"))
-  } else {
+  # if (isFALSE(identical(pdf, character(0)))) {
+  #   pdf_file <- paste0("filename: ", paste0("'", pdf, "'"))
+  # } else {
     pdf_file <- paste0("filename:")
-  }
+  # }
 
   
   tmp <- list(typ = typ, col = col, au = au, yr = yr, tit = tit, jou = jou, vol = vol, pge = pge, doi = doi, url = url, pdf_file = pdf_file)
@@ -96,7 +96,7 @@ for (i in 1:nrow(bib)) {
 
 
 for (i in 1:length(yamllist)) {
-  fileConn <- file(yamllist2[[i]]$filename)
+  fileConn <- file(here::here("_publications", yamllist2[[i]]$filename))
   writeLines(
     c(
       "---",
