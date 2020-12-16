@@ -24,8 +24,7 @@ tex2txt <- function(x) {
     str_replace_all(., "'", "	&apos;")
 }
 
-
-# bib$TITLE[[1]] %>%    str_replace_all(., "\\{\\\\\\\"\\{u\\}\\}", "&uuml;") 
+bib$TITLE[[4]] %>%    str_replace_all(., "\\{\\\\\\\"\\{u\\}\\}", "&uuml;")
 
 spec2italics <- function(x) {
   x <- x %>%
@@ -65,7 +64,7 @@ for (i in 1:nrow(bib)) {
   col <- paste0("collection: ", "publications")
   au <- paste0("author: ", paste0(paste(authorlist[-no_au], collapse = ", ")), " & ", last(authorlist)) %>% tex2txt()
   yr <- paste0("year: ", paste(bib$YEAR[[i]]))
-  tit <- paste0("title: ", paste0("'", bib$TITLE[[i]], "'")) %>% spec2italics()
+  tit <- paste0("title: ", paste0("'", tex2txt(bib$TITLE[[i]]), "'")) %>% spec2italics()
   jou <- paste0("journal: ", paste0("'", bib$JOURNAL[[i]], "'"))
   vol <- paste0("volume: ", paste(bib$VOLUME[[i]]))
   pge <- paste0("pages: ", bib$PAGES[[i]] %>% str_replace(., "--", "-"))
