@@ -20,11 +20,11 @@ tex2txt <- function(x) {
     str_replace_all(., "\\{\\\\\\\"\\{O\\}\\}", "&Ouml;") %>%
     str_replace_all(., "\\{\\\\\\\"\\{e\\}\\}", "&euml;") %>%
     str_replace_all(., "\\{\\\\\\\"\\{u\\}\\}", "&uuml;") %>%
-    str_replace_all(., "\\{\\\\\\\"\\{U\\}\\}", "&Uuml;") %>% 
+    str_replace_all(., "\\{\\\\\\\"\\{U\\}\\}", "&Uuml;") %>%
     str_replace_all(., "'", "&apos;")
 }
 
-bib$TITLE[[4]] %>%    str_replace_all(., "\\{\\\\\\\"\\{u\\}\\}", "&uuml;")
+bib$TITLE[[4]] %>% str_replace_all(., "\\{\\\\\\\"\\{u\\}\\}", "&uuml;")
 
 spec2italics <- function(x) {
   x <- x %>%
@@ -40,7 +40,7 @@ yamllist2 <- list()
 
 for (i in 1:nrow(bib)) {
   no_au <- length(bib$AUTHOR[[i]])
-  
+
   # !> reformat author names to just include lastname followed by initials
   authorlist <- bib$AUTHOR[[i]]
   for (j in 1:no_au) {
@@ -48,7 +48,7 @@ for (i in 1:nrow(bib)) {
       str_remove(., "[,]") %>%
       str_remove(., "[.]") %>%
       word(1)
-    
+
     initital <- bib$AUTHOR[[i]][j] %>%
       str_remove(., "[,]") %>%
       str_remove(., "[.]") %>%
@@ -59,7 +59,7 @@ for (i in 1:nrow(bib)) {
       paste(., sep = "", collapse = "")
     authorlist[j] <- paste(lastname, initital)
   }
-  
+
   typ <- paste0("type: ", paste(bib$CATEGORY[[i]]))
   col <- paste0("collection: ", "publications")
   au <- paste0("author: ", paste0(paste(authorlist[-no_au], collapse = ", ")), " & ", last(authorlist)) %>% tex2txt()
@@ -72,14 +72,19 @@ for (i in 1:nrow(bib)) {
   url <- paste0("url: ", bib$URL[[i]] %>% str_split(" ") %>% unlist() %>% last())
   name <- paste0("article", i, sep = "")
 
-    pdf_file <- paste0("filename:")
 
-  
+  pdf <- pdf_filenames %>%
+    .[str_starts(., word(authorlist)[1])] %>%
+    .[str_which(., as.character(bib$YEAR[[i]]))] %>%
+    .[str_which(., word(bib$TITLE[[i]], 1, 3))]
+
+
+  pdf_file <- paste0("filename:")
+
+
   tmp <- list(typ = typ, col = col, au = au, yr = yr, tit = tit, jou = jou, vol = vol, pge = pge, doi = doi, url = url, pdf_file = pdf_file)
-  
   yamllist[[name]] <- tmp
-  
-  
+
   filename <- paste0(name, "_", word(authorlist[1]), "_", bib$YEAR[[i]], ".md")
   abst <- paste0(bib$ABSTRACT[[i]])
   tmp2 <- list(abst = abst, filename = filename)
