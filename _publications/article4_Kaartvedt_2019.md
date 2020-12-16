@@ -8,6 +8,6 @@ journal: 'ICES Journal of Marine Science'
 volume: 76
 pages: 803-812
 doi: 10.1093/icesjms/fsz010
-url: https://academic.oup.com/icesjms/advance-article/doi/10.1093/icesjms/fsz010/5306603
+url: 'https://academic.oup.com/icesjms/advance-article/doi/10.1093/icesjms/fsz010/5306603'
 filename: '/files/papers/article4_Kaartvedt_2019.pdf'
 ---

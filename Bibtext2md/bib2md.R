@@ -70,7 +70,7 @@ for (i in 1:nrow(bib)) {
   vol <- paste0("volume: ", paste(bib$VOLUME[[i]]))
   pge <- paste0("pages: ", bib$PAGES[[i]] %>% str_replace(., "--", "-"))
   doi <- paste0("doi: ", paste(bib$DOI[[i]]))
-  url <- paste0("url: ", bib$URL[[i]] %>% str_split(" ") %>% unlist() %>% last())
+  url <- paste0("url: ", paste0("'", bib$URL[[i]] %>% str_split(" ") %>% unlist() %>% last(),"'"))
   name <- paste0("article", i, sep = "")
   
   pdf_file <- paste0(name, "_", word(authorlist[1]), "_", bib$YEAR[[i]], ".pdf")
@@ -81,7 +81,7 @@ for (i in 1:nrow(bib)) {
   }
   
   
-  pdf_file <- paste0("filename: ", "'", pdf_file,"'")
+  pdf_file <- paste0("filename: ", "'", "/files/papers/", pdf_file,"'")
   
   
   
