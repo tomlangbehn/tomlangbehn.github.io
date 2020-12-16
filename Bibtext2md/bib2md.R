@@ -80,7 +80,7 @@ for (i in 1:nrow(bib)) {
     paste0("'", .,"'")
 
 
-  pdf_file <- paste0("filename: ", pdf_name)
+  pdf_file <- paste0("filename: ", "'Butler et al'")
 
 
   tmp <- list(typ = typ, col = col, au = au, yr = yr, tit = tit, jou = jou, vol = vol, pge = pge, doi = doi, url = url, pdf_file = pdf_file)
