@@ -9,5 +9,5 @@ volume: 47
 pages: 193-195
 doi: NA
 url: NA
-filename: 'article1_Katzenberger_2013.pdf'
+filename: '/files/papers/article1_Katzenberger_2013.pdf'
 ---
