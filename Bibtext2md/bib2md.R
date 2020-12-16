@@ -71,15 +71,9 @@ for (i in 1:nrow(bib)) {
   doi <- paste0("doi: ", paste(bib$DOI[[i]]))
   url <- paste0("url: ", bib$URL[[i]] %>% str_split(" ") %>% unlist() %>% last())
   name <- paste0("article", i, sep = "")
-  head_title <- paste(bib$TITLE[[i]]) %>%
-    str_trim() %>%
-    word(., 1, 6)
-  
-  if (pdf_filenames %>% str_detect(., head_title, negate = FALSE) %>% any() %>% isTRUE()) {
-    pdf_file <- paste0("filename: ", pdf_filenames[pdf_filenames %>% str_detect(., head_title, negate = FALSE)])
-  } else {
+
     pdf_file <- paste0("filename:")
-  }
+
   
   tmp <- list(typ = typ, col = col, au = au, yr = yr, tit = tit, jou = jou, vol = vol, pge = pge, doi = doi, url = url, pdf_file = pdf_file)
   
