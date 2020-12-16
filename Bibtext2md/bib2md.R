@@ -21,7 +21,7 @@ tex2txt <- function(x) {
     str_replace_all(., "\\{\\\\\\\"\\{e\\}\\}", "&euml;") %>%
     str_replace_all(., "\\{\\\\\\\"\\{u\\}\\}", "&uuml;") %>%
     str_replace_all(., "\\{\\\\\\\"\\{U\\}\\}", "&Uuml;") %>% 
-    str_replace_all(., "'", "	&apos;")
+    str_replace_all(., "'", "&apos;")
 }
 
 bib$TITLE[[4]] %>%    str_replace_all(., "\\{\\\\\\\"\\{u\\}\\}", "&uuml;")
