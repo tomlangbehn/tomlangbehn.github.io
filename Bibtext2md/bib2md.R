@@ -94,7 +94,7 @@ for (i in 1:nrow(bib)) {
 
 
 for (i in 1:length(yamllist)) {
-  fileConn <- file(yamllist2[[i]]$filename)
+  fileConn <- file(here::here("_publications", yamllist2[[i]]$filename))
   writeLines(
     c(
       "---",
