@@ -73,13 +73,14 @@ for (i in 1:nrow(bib)) {
   name <- paste0("article", i, sep = "")
 
 
-  pdf <- pdf_filenames %>%
+  pdf_name <- pdf_filenames %>%
     .[str_starts(., word(authorlist)[1])] %>%
     .[str_which(., as.character(bib$YEAR[[i]]))] %>%
-    .[str_which(., word(bib$TITLE[[i]], 1, 3))]
+    .[str_which(., word(bib$TITLE[[i]], 1, 3))] %>% 
+    paste0("'", .,"'")
 
 
-  pdf_file <- paste0("filename:")
+  pdf_file <- paste0("filename: ", pdf_name)
 
 
   tmp <- list(typ = typ, col = col, au = au, yr = yr, tit = tit, jou = jou, vol = vol, pge = pge, doi = doi, url = url, pdf_file = pdf_file)
