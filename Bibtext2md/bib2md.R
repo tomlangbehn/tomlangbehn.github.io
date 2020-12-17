@@ -70,7 +70,13 @@ for (i in 1:nrow(bib)) {
   vol <- paste0("volume: ", paste(bib$VOLUME[[i]]))
   pge <- paste0("pages: ", bib$PAGES[[i]] %>% str_replace(., "--", "-"))
   doi <- paste0("doi: ", paste(bib$DOI[[i]]))
-  url <- paste0("url: ", paste0("'", bib$URL[[i]] %>% str_split(" ") %>% unlist() %>% last(),"'"))
+  
+  if(is.na(bib$URL[[i]])){
+   external_url   <- paste0("external_url: ") 
+  } else {
+   external_url <- paste0("external_url: ", bib$URL[[i]] %>% str_split(" ") %>% unlist() %>% last())  
+  }
+
   name <- paste0("article", i, sep = "")
   
   pdf_file <- paste0(name, "_", word(authorlist[1]), "_", bib$YEAR[[i]], ".pdf")
@@ -85,7 +91,7 @@ for (i in 1:nrow(bib)) {
   
   
   
-  tmp <- list(typ = typ, col = col, au = au, yr = yr, tit = tit, jou = jou, vol = vol, pge = pge, doi = doi, url = url, pdf_file = pdf_file)
+  tmp <- list(typ = typ, col = col, au = au, yr = yr, tit = tit, jou = jou, vol = vol, pge = pge, doi = doi, external_url = external_url, pdf_file = pdf_file)
   
   yamllist[[name]] <- tmp
   

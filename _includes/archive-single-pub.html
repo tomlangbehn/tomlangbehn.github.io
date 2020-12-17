@@ -39,9 +39,10 @@
                   <span class="title"><strong> {{post.title}}</strong>,</span>
                   <span class="periodical"><i>{{post.journal}}</i>. {{post.volume}}:{{post.pages}}, </span>
                   <span class="links">
+				  {% if post.doi %}
 				  <span class="doi"> doi: {{ post.doi }} </span>
-				  <span class="url"> url: {{ post.external_url }} </span>
-                  [<a href="https://academic.oup.com/icesjms/advance-article/doi/10.1093/icesjms/fsz010/5306603" target="_blank">HTML</a>] 
+				  {% endif %}
+                  [<a href="{{ post.external_url }}" target="_blank">HTML</a>] 
 				  [<a href="{{ post.filename }}" target="_blank">PDF</a>]
                   </span>
                </td>
