@@ -40,7 +40,6 @@ yamllist <- list()
 yamllist2 <- list()
 
 for (i in 1:nrow(bib)) {
-  i <- 2
   no_au <- length(bib$AUTHOR[[i]])
 
   # !> reformat author names to just include lastname followed by initials
@@ -51,8 +50,6 @@ for (i in 1:nrow(bib)) {
       str_remove(., "[.]") %>%
       word(1)
 
-
-    j <- 1
     initial <- bib$AUTHOR[[i]][j] %>%
       tex2txt() %>%
       str_remove(., "[,]") %>%
@@ -75,6 +72,11 @@ for (i in 1:nrow(bib)) {
     authorlist[j] <- paste(lastname, initial)
   }
 
+  if(authorlist[1] == "Langbehn T" | authorlist[1] == "Langbehn TJ"){
+    authorlist[1] <- paste0("<b>", authorlist[1], "</b>")
+    }
+  
+  
   typ <- paste0("type: ", paste(bib$CATEGORY[[i]]))
   col <- paste0("collection: ", "publications")
   au <- paste0("author: ", paste0(paste(authorlist[-no_au], collapse = ", ")), " & ", last(authorlist)) %>% tex2txt()

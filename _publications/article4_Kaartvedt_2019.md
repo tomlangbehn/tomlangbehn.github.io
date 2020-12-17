@@ -1,7 +1,7 @@
 ---
 type: ARTICLE
 collection: publications
-author: Kaartvedt S, Langbehn T & Aksnes D
+author: Kaartvedt S, <b>Langbehn TJ</b> & Aksnes D
 year: 2019
 title: 'Enlightening the ocean&apos;s twilight zone'
 journal: 'ICES Journal of Marine Science'
