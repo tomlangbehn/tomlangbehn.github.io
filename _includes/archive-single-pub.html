@@ -37,11 +37,15 @@
                <td>
 				  <span class="author"> {{ post.author }} ({{ post.year }}). </span>
                   <span class="title"><strong> {{post.title}}</strong>,</span>
-                  <span class="periodical"><i>{{post.journal}}</i>. {{post.volume}}:{{post.pages}} </span>
-                  <span class="links">
+				  
 				  {% if post.doi %}
-				  <span class="doi"> , doi: {{ post.doi }} </span>
+				  <span class="periodical"><i>{{post.journal}}</i>. {{post.volume}}:{{post.pages}}, </span>
+				  <span class="doi"> doi: {{ post.doi }} </span>
+				  {% else %}
+				  <span class="periodical"><i>{{post.journal}}</i>. {{post.volume}}:{{post.pages}} </span>
 				  {% endif %}
+
+                  <span class="links">
                   [<a href="{{ post.external_url }}" target="_blank">HTML</a>] 
 				  [<a href="{{ post.filename }}" target="_blank">PDF</a>]
                   </span>
