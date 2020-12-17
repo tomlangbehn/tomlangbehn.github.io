@@ -7,7 +7,7 @@ title: 'Erstnachweis von <i>Hydrellia tarsata</i> (Diptera: Ephydridae) f&uuml;r
 journal: 'Abhandlungen des Naturwissenschaftlichen Vereins zu Bremen'
 volume: 47
 pages: 193-195
-doi: NA
+doi: 
 external_url: 
 filename: '/files/papers/article1_Katzenberger_2013.pdf'
 ---

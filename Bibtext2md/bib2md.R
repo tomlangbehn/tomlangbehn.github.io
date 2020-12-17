@@ -72,7 +72,7 @@ for (i in 1:nrow(bib)) {
   doi <- paste0("doi: ", paste(bib$DOI[[i]]))
   
   if(is.na(bib$URL[[i]])){
-   external_url   <- paste0("external_url: ") 
+   external_url   <- paste0("external_url: LALA") 
   } else {
    external_url <- paste0("external_url: ", bib$URL[[i]] %>% str_split(" ") %>% unlist() %>% last())  
   }
