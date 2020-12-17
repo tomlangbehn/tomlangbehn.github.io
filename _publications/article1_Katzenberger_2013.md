@@ -1,7 +1,7 @@
 ---
 type: ARTICLE
 collection: publications
-author: Katzenberger J, <strong style='color: red;'>Langbehn TJ</strong> & Zacharias D
+author: Katzenberger J, <strong>Langbehn TJ</strong> & Zacharias D
 year: 2013
 title: 'Erstnachweis von <i>Hydrellia tarsata</i> (Diptera: Ephydridae) f&uuml;r Bremen in Bl&uuml;ten von <i>Stratiotes aloides</i>'
 journal: 'Abhandlungen des Naturwissenschaftlichen Vereins zu Bremen'

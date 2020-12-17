@@ -38,7 +38,7 @@ spec2italics <- function(x) {
 
 bold_author <- function(x) {
 x <- x %>% str_replace_all(., "Langbehn T", "Langbehn TJ") %>%   
-       str_replace_all(., "Langbehn TJ", "<strong style="color: red;">Langbehn TJ</strong>") 
+       str_replace_all(., "Langbehn TJ", "<strong>Langbehn TJ</strong>") 
  return(x)
 }
   

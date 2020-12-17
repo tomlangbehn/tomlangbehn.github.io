@@ -1,7 +1,7 @@
 ---
 type: ARTICLE
 collection: publications
-author: Sguotti C, Otto S, Frelat R, <strong style='color: red;'>Langbehn TJ</strong>, Ryberg M, Lindegren M, Durant J, Stenseth N & M&ouml;llmann C
+author: Sguotti C, Otto S, Frelat R, <strong>Langbehn TJ</strong>, Ryberg M, Lindegren M, Durant J, Stenseth N & M&ouml;llmann C
 year: 2019
 title: 'Catastrophic dynamics limit Atlantic cod recovery'
 journal: 'Proceedings of the Royal Society B: Biological Sciences'

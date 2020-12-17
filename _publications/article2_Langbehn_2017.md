@@ -1,7 +1,7 @@
 ---
 type: ARTICLE
 collection: publications
-author: <strong style='color: red;'>Langbehn TJ</strong> & Varpe &Oslash;
+author: <strong>Langbehn TJ</strong> & Varpe &Oslash;
 year: 2017
 title: 'Sea-ice loss boosts visual search: fish foraging and changing pelagic interactions in polar oceans'
 journal: 'Global Change Biology'
