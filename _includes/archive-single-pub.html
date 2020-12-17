@@ -32,7 +32,7 @@
          <table>
             <tr>
                <td>
-			   	   {% if post.year == "2019" %}
+		
 				  <span class="author"> {{ post.author }} ({{ post.year }}). </span>
                   <span class="title"><strong> {{post.title}}</strong>,</span>
                   <span class="periodical"><i>{{post.journal}}</i>. {{post.volume}}:{{post.pages}}, </span>
@@ -41,7 +41,7 @@
                   [<a href="{{ post.url }}" target="_blank">HTML</a>] 
 				  [<a href="{{ post.filename }}" target="_blank">PDF</a>]
                   </span>
-				  {% end if %}
+
                </td>
                <td class="altmetric">
 					<span class="__dimensions_badge_embed__" data-doi= "{{ post.doi }}" data-style="large_rectangle"></span>
