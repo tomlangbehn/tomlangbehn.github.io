@@ -1,7 +1,7 @@
 ---
 type: ARTICLE
 collection: publications
-author: Langbehn T, Aksnes D, Kaartvedt S, Fiksen { & J&oslash;rgensen C
+author: Langbehn T, Aksnes D, Kaartvedt S, Fiksen &Oslash; & J&oslash;rgensen C
 year: 2019
 title: 'Light comfort zone in a mesopelagic fish emerges from adaptive behaviour along a latitudinal gradient'
 journal: 'Marine Ecology Progress Series'

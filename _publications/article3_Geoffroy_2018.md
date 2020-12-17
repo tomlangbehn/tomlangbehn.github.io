@@ -1,7 +1,7 @@
 ---
 type: ARTICLE
 collection: publications
-author: Geoffroy M, Berge J, Majaneva S, Johnsen G, Langbehn TJ, Cottier F, Mogstad AA, Zolich A & Last K
+author: Geoffroy M, Berge J, Majaneva S, Johnsen G, Langbehn T, Cottier F, Mogstad A, Zolich A & Last K
 year: 2018
 title: 'Increased occurrence of the jellyfish <i>Periphylla periphylla</i> in the European high Arctic'
 journal: 'Polar Biology'

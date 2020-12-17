@@ -21,11 +21,11 @@ tex2txt <- function(x) {
     str_replace_all(., "\\{\\\\\\\"\\{O\\}\\}", "&Ouml;") %>%
     str_replace_all(., "\\{\\\\\\\"\\{e\\}\\}", "&euml;") %>%
     str_replace_all(., "\\{\\\\\\\"\\{u\\}\\}", "&uuml;") %>%
-    str_replace_all(., "\\{\\\\\\\"\\{U\\}\\}", "&Uuml;") %>% 
+    str_replace_all(., "\\{\\\\\\\"\\{U\\}\\}", "&Uuml;") %>%
     str_replace_all(., "'", "&apos;")
 }
 
-# bib$TITLE[[4]] %>%    str_replace_all(., "\\{\\\\\\\"\\{u\\}\\}", "&uuml;")
+bib$AUTHOR[[2]] %>% str_replace_all(., "\\{\\\\\\\"\\{u\\}\\}", "&uuml;")
 
 spec2italics <- function(x) {
   x <- x %>%
@@ -40,8 +40,9 @@ yamllist <- list()
 yamllist2 <- list()
 
 for (i in 1:nrow(bib)) {
+  i <- 2
   no_au <- length(bib$AUTHOR[[i]])
-  
+
   # !> reformat author names to just include lastname followed by initials
   authorlist <- bib$AUTHOR[[i]]
   for (j in 1:no_au) {
@@ -49,18 +50,31 @@ for (i in 1:nrow(bib)) {
       str_remove(., "[,]") %>%
       str_remove(., "[.]") %>%
       word(1)
-    
-    initital <- bib$AUTHOR[[i]][j] %>%
+
+
+    j <- 1
+    initial <- bib$AUTHOR[[i]][j] %>%
+      tex2txt() %>%
       str_remove(., "[,]") %>%
       str_remove(., "[.]") %>%
       str_split(" ") %>%
       unlist() %>%
       .[-1] %>%
-      str_sub(., 1, 1) %>%
-      paste(., sep = "", collapse = "")
-    authorlist[j] <- paste(lastname, initital)
+      str_split(";") %>%
+      unlist() %>%
+      .[1]
+
+    if (str_starts(initial, "&", negate = FALSE)) {
+      initial <- paste0(initial, ";")
+    } else {
+      initial <- initial %>%
+        str_sub(., 1, 1) %>%
+        paste(., sep = "", collapse = "")
+    }
+
+    authorlist[j] <- paste(lastname, initial)
   }
-  
+
   typ <- paste0("type: ", paste(bib$CATEGORY[[i]]))
   col <- paste0("collection: ", "publications")
   au <- paste0("author: ", paste0(paste(authorlist[-no_au], collapse = ", ")), " & ", last(authorlist)) %>% tex2txt()
@@ -69,33 +83,41 @@ for (i in 1:nrow(bib)) {
   jou <- paste0("journal: ", paste0("'", bib$JOURNAL[[i]], "'"))
   vol <- paste0("volume: ", paste(bib$VOLUME[[i]]))
   pge <- paste0("pages: ", bib$PAGES[[i]] %>% str_replace(., "--", "-"))
-  doi <- paste0("doi: ", paste(bib$DOI[[i]]))
-  
-  if(is.na(bib$URL[[i]])){
-   external_url   <- paste0("external_url: LALA") 
+
+  if (is.na(bib$URL[[i]])) {
+    doi <- paste0("doi: ")
   } else {
-   external_url <- paste0("external_url: ", bib$URL[[i]] %>% str_split(" ") %>% unlist() %>% last())  
+    doi <- paste0("doi: ", paste(bib$DOI[[i]]))
+  }
+
+  if (is.na(bib$URL[[i]])) {
+    external_url <- paste0("external_url: ")
+  } else {
+    external_url <- paste0("external_url: ", bib$URL[[i]] %>% str_split(" ") %>% unlist() %>% last())
   }
 
   name <- paste0("article", i, sep = "")
-  
+
   pdf_file <- paste0(name, "_", word(authorlist[1]), "_", bib$YEAR[[i]], ".pdf")
-  
-  if(!file.exists(here::here("files","papers", pdf_file))){
-    pdf <- pdf_filenames %>% .[str_starts(., word(authorlist)[1])] %>% .[str_which(.,as.character(bib$YEAR[[i]]))] %>% .[str_which(., word(bib$TITLE[[i]],1,2))]
-    file.rename(here::here("files","papers", pdf), here::here("files","papers", pdf_file))
+
+  if (!file.exists(here::here("files", "papers", pdf_file))) {
+    pdf <- pdf_filenames %>%
+      .[str_starts(., word(authorlist)[1])] %>%
+      .[str_which(., as.character(bib$YEAR[[i]]))] %>%
+      .[str_which(., word(bib$TITLE[[i]], 1, 2))]
+    file.rename(here::here("files", "papers", pdf), here::here("files", "papers", pdf_file))
   }
-  
-  
-  pdf_file <- paste0("filename: ", "'", "/files/papers/", pdf_file,"'")
-  
-  
-  
+
+
+  pdf_file <- paste0("filename: ", "'", "/files/papers/", pdf_file, "'")
+
+
+
   tmp <- list(typ = typ, col = col, au = au, yr = yr, tit = tit, jou = jou, vol = vol, pge = pge, doi = doi, external_url = external_url, pdf_file = pdf_file)
-  
+
   yamllist[[name]] <- tmp
-  
-  
+
+
   filename <- paste0(name, "_", word(authorlist[1]), "_", bib$YEAR[[i]], ".md")
   abst <- paste0(bib$ABSTRACT[[i]])
   tmp2 <- list(abst = abst, filename = filename)
