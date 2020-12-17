@@ -8,6 +8,6 @@ journal: 'Abhandlungen des Naturwissenschaftlichen Vereins zu Bremen'
 volume: 47
 pages: 193-195
 doi: NA
-url: 'NA'
+url: 
 filename: '/files/papers/article1_Katzenberger_2013.pdf'
 ---

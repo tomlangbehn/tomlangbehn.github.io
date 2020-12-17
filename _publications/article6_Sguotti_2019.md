@@ -8,6 +8,6 @@ journal: 'Proceedings of the Royal Society B: Biological Sciences'
 volume: 286
 pages: 20182877
 doi: 10.1098/rspb.2018.2877
-url: 'https://royalsocietypublishing.org/doi/10.1098/rspb.2018.2877'
+url: https://royalsocietypublishing.org/doi/10.1098/rspb.2018.2877
 filename: '/files/papers/article6_Sguotti_2019.pdf'
 ---
