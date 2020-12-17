@@ -36,6 +36,18 @@ spec2italics <- function(x) {
 }
 
 
+bold_author <- function(x) {
+x <- x %>% str_replace_all(., "Langbehn T", "Langbehn TJ") %>%   
+       str_replace_all(., "Langbehn TJ", "<strong style="color: red;">Langbehn TJ</strong>") 
+ return(x)
+}
+  
+
+
+if(authorlist[1] == "Langbehn T" | authorlist[1] == "Langbehn TJ"){
+  authorlist[1] <- paste0("<b>", authorlist[1], "</b>")
+} else
+
 yamllist <- list()
 yamllist2 <- list()
 
@@ -72,14 +84,9 @@ for (i in 1:nrow(bib)) {
     authorlist[j] <- paste(lastname, initial)
   }
 
-  if(authorlist[1] == "Langbehn T" | authorlist[1] == "Langbehn TJ"){
-    authorlist[1] <- paste0("<b>", authorlist[1], "</b>")
-    }
-  
-  
   typ <- paste0("type: ", paste(bib$CATEGORY[[i]]))
   col <- paste0("collection: ", "publications")
-  au <- paste0("author: ", paste0(paste(authorlist[-no_au], collapse = ", ")), " & ", last(authorlist)) %>% tex2txt()
+  au <- paste0("author: ", paste0(paste(authorlist[-no_au], collapse = ", ")), " & ", last(authorlist)) %>% tex2txt() %>% bold_author()
   yr <- paste0("year: ", paste(bib$YEAR[[i]]))
   tit <- paste0("title: ", paste0("'", tex2txt(bib$TITLE[[i]]), "'")) %>% spec2italics()
   jou <- paste0("journal: ", paste0("'", bib$JOURNAL[[i]], "'"))
