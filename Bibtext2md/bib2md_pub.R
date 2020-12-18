@@ -43,11 +43,6 @@ x <- x %>% str_replace_all(., "Langbehn T", "Langbehn TJ") %>%
 }
   
 
-
-if(authorlist[1] == "Langbehn T" | authorlist[1] == "Langbehn TJ"){
-  authorlist[1] <- paste0("<b>", authorlist[1], "</b>")
-} else
-
 yamllist <- list()
 yamllist2 <- list()
 
