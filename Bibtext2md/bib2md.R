@@ -5,7 +5,9 @@ library(bib2df)
 
 
 # !> read bib text files
-bib <- bib2df::bib2df("my_talks.bib") %>% arrange(YEAR, AUTHOR)
+bib <- bib2df::bib2df("my_pubs.bib") %>% arrange(YEAR, AUTHOR)
+pdf_filenames <- here::here("files", "papers") %>% list.files(".pdf")
+
 
 
 
@@ -40,6 +42,11 @@ x <- x %>% str_replace_all(., "Langbehn T", "Langbehn TJ") %>%
  return(x)
 }
   
+
+
+if(authorlist[1] == "Langbehn T" | authorlist[1] == "Langbehn TJ"){
+  authorlist[1] <- paste0("<b>", authorlist[1], "</b>")
+} else
 
 yamllist <- list()
 yamllist2 <- list()
@@ -77,7 +84,7 @@ for (i in 1:nrow(bib)) {
     authorlist[j] <- paste(lastname, initial)
   }
 
-  typ <- paste0("type: ", "talk")
+  typ <- paste0("type: ", paste(bib$CATEGORY[[i]]))
   col <- paste0("collection: ", "publications")
   au <- paste0("author: ", paste0(paste(authorlist[-no_au], collapse = ", ")), " & ", last(authorlist)) %>% tex2txt() %>% bold_author()
   yr <- paste0("year: ", paste(bib$YEAR[[i]]))
@@ -85,15 +92,43 @@ for (i in 1:nrow(bib)) {
   jou <- paste0("journal: ", paste0("'", bib$JOURNAL[[i]], "'"))
   vol <- paste0("volume: ", paste(bib$VOLUME[[i]]))
   pge <- paste0("pages: ", bib$PAGES[[i]] %>% str_replace(., "--", "-"))
-  name <- paste0("talk", i, sep = "")
+
+  if (is.na(bib$URL[[i]])) {
+    doi <- paste0("doi: ")
+  } else {
+    doi <- paste0("doi: ", paste(bib$DOI[[i]]))
+  }
+
+  if (is.na(bib$URL[[i]])) {
+    external_url <- paste0("external_url: ")
+  } else {
+    external_url <- paste0("external_url: ", bib$URL[[i]] %>% str_split(" ") %>% unlist() %>% last())
+  }
+
+  name <- paste0("article", i, sep = "")
+
+  pdf_file <- paste0(name, "_", word(authorlist[1]), "_", bib$YEAR[[i]], ".pdf")
+
+  if (!file.exists(here::here("files", "papers", pdf_file))) {
+    pdf <- pdf_filenames %>%
+      .[str_starts(., word(authorlist)[1])] %>%
+      .[str_which(., as.character(bib$YEAR[[i]]))] %>%
+      .[str_which(., word(bib$TITLE[[i]], 1, 2))]
+    file.rename(here::here("files", "papers", pdf), here::here("files", "papers", pdf_file))
+  }
 
 
-  tmp <- list(typ = typ, col = col, au = au, yr = yr, tit = tit, jou = jou, vol = vol, pge = pge)
+  pdf_file <- paste0("filename: ", "'", "/files/papers/", pdf_file, "'")
+
+
+
+  tmp <- list(typ = typ, col = col, au = au, yr = yr, tit = tit, jou = jou, vol = vol, pge = pge, doi = doi, external_url = external_url, pdf_file = pdf_file)
+
   yamllist[[name]] <- tmp
 
 
   filename <- paste0(name, "_", word(authorlist[1]), "_", bib$YEAR[[i]], ".md")
-  abst <- "empty"
+  abst <- paste0(bib$ABSTRACT[[i]])
   tmp2 <- list(abst = abst, filename = filename)
   yamllist2[[name]] <- tmp2
 }

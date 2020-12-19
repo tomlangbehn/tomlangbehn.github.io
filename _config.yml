@@ -246,10 +246,9 @@ defaults:
       path: ""
       type: talks
     values:
-      layout: single
+      layout: talk
       author_profile: true
       share: true
-      comments: true
 
 # Sass/SCSS
 sass:
